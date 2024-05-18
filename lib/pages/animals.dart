@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:learn/utils/constants.dart';
+import 'package:learn/utils/dimensions.dart';
 
 class Animal {
   final String name;
@@ -21,8 +22,6 @@ class Animal {
 }
 
 class AnimalsPage extends StatelessWidget {
-
-
   final FlutterTts flutterTts = FlutterTts();
   final AudioPlayer audioPlayer = AudioPlayer();
 
@@ -42,7 +41,7 @@ class AnimalsPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              _showAnimalPopup(context, AppConstants.animals[index],index);
+              _showAnimalPopup(context, AppConstants.animals[index], index);
             },
             child: Container(
               margin: const EdgeInsets.all(5.0),
@@ -55,11 +54,13 @@ class AnimalsPage extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: SvgPicture.asset(AppConstants.animals[index].svgAsset),
+                    width: ConstantDimensions.sizedBoxWidthExtraLarge,
+                    height: ConstantDimensions.sizedBoxHeightExtraLarge,
+                    child:
+                        SvgPicture.asset(AppConstants.animals[index].svgAsset),
                   ),
-                  const SizedBox(width: 28.0),
+                  const SizedBox(
+                      width: ConstantDimensions.sizedBoxWidthMedium_Large),
                   Text(
                     AppConstants.animals[index].name,
                     style: const TextStyle(
@@ -77,7 +78,8 @@ class AnimalsPage extends StatelessWidget {
     );
   }
 
-  Future<void> _showAnimalPopup(BuildContext context, Animal animal, int currentIndex) async {
+  Future<void> _showAnimalPopup(
+      BuildContext context, Animal animal, int currentIndex) async {
     await flutterTts.setVolume(1.0);
     await flutterTts.setSpeechRate(.5);
     await flutterTts.setLanguage("EN-IN");
@@ -150,15 +152,15 @@ class _AnimalPopupState extends State<AnimalPopup> {
               });
             },
             child: SizedBox(
-              width: 200,
-              height: 200,
+              width: ConstantDimensions.sizedBoxHeightExtraLarge * 4,
+              height: ConstantDimensions.sizedBoxWidthExtraLarge * 4,
               child: SvgPicture.asset(
                 widget.animal.svgAsset,
                 color: isTapped ? const Color.fromARGB(81, 118, 96, 94) : null,
               ),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium),
           ElevatedButton(
             onPressed: () {
               _playAnimalSound(widget.animal.soundAsset);
@@ -173,8 +175,8 @@ class _AnimalPopupState extends State<AnimalPopup> {
                 },
                 icon: const Icon(Icons.arrow_back),
               ),
-              const SizedBox(
-                width: 135,
+              SizedBox(
+                width: ConstantDimensions.sizedBoxExceptions[0],
               ),
               IconButton(
                 onPressed: () {
@@ -204,7 +206,7 @@ class _AnimalPopupState extends State<AnimalPopup> {
     );
   }
 
-void _navigateToPreviousAnimal() {
+  void _navigateToPreviousAnimal() {
     setState(() {
       widget.currentIndex = (widget.currentIndex - 1) % widget.animals.length;
       if (widget.currentIndex < 0) {
@@ -220,7 +222,6 @@ void _navigateToPreviousAnimal() {
       widget.animal = widget.animals[widget.currentIndex];
     });
   }
-
 
   Future<void> _playAnimalSound(String soundAsset) async {
     await widget.audioPlayer.setAsset(soundAsset);

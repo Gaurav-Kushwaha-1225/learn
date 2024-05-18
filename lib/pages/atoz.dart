@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/utils/constants.dart';
+import 'package:learn/utils/dimensions.dart';
 
 class ItemTile extends StatelessWidget {
   final int index;
@@ -49,14 +50,14 @@ class ItemTile extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 3),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightExtraSmall / 2),
               SvgPicture.asset(
                 item.iconAsset,
                 width: 100,
                 height: 100,
                 alignment: Alignment.center,
               ),
-              const SizedBox(height: 3),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightExtraSmall / 2),
               Text(item.description, textAlign: TextAlign.center),
             ],
           ),
@@ -155,7 +156,7 @@ class _PopupContentState extends State<_PopupContent> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 20),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -180,7 +181,7 @@ class _PopupContentState extends State<_PopupContent> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
                   GestureDetector(
                     onTap: () {
                       _speakText(currentItem.description);
@@ -192,7 +193,7 @@ class _PopupContentState extends State<_PopupContent> {
                       alignment: Alignment.center,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
                   Text(
                     currentItem.description,
                     textAlign: TextAlign.center,
@@ -201,7 +202,7 @@ class _PopupContentState extends State<_PopupContent> {
                       // color: Colors.black,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -215,7 +216,7 @@ class _PopupContentState extends State<_PopupContent> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
@@ -229,7 +230,7 @@ class _PopupContentState extends State<_PopupContent> {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: ConstantDimensions.sizedBoxHeightExtraLarge),
                 ],
               ),
             ),

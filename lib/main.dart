@@ -7,6 +7,7 @@ import 'package:learn/pages/animals.dart';
 import 'package:learn/pages/parts.dart';
 import 'package:learn/pages/shapes.dart';
 import 'package:learn/pages/solar.dart';
+import 'package:learn/utils/dimensions.dart';
 import 'package:learn/utils/routes.dart';
 import 'package:learn/widgets/drawer.dart';
 
@@ -122,14 +123,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               const Text(
                 'ALPHABETS',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Text("Learn A to Z with pronunciation and an example"),
               const SizedBox(
-                height: 20,
+                height: ConstantDimensions.sizedBoxHeightMedium,
               ),
               GestureDetector(
                 onTap: () {
@@ -162,14 +163,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+               const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               const Text(
                 'ANIMALS',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Text("Learn about animals and their voices"),
               const SizedBox(
-                height: 20,
+                height: ConstantDimensions.sizedBoxHeightMedium,
               ),
               GestureDetector(
                 onTap: () {
@@ -202,13 +203,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               const Text(
                 'BODY PARTS',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Text("Know about body parts and their pronunciation."),
-              const SizedBox(height: 20),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -240,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               const Text(
                 'BIRDS',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

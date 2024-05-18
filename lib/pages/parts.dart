@@ -5,6 +5,8 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:learn/utils/constants.dart';
 import 'package:learn/utils/functions.dart';
 
+import '../utils/dimensions.dart';
+
 void main() {
   runApp(
     const MaterialApp(
@@ -102,7 +104,7 @@ class _PartsPagePageState extends State<PartsPage> {
                           fontSize: 50, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
-                      width: 150,
+                      width: ConstantDimensions.sizedBoxWidthExtraLarge * 3,
                     ),
                     Row(
                       children: [
@@ -117,7 +119,7 @@ class _PartsPagePageState extends State<PartsPage> {
                           },
                         ),
                         const SizedBox(
-                          width: 25,
+                          width: ConstantDimensions.sizedBoxWidthExtraLarge / 2,
                         ),
                         IconButton(
                           onPressed: controller.undo,
@@ -129,10 +131,10 @@ class _PartsPagePageState extends State<PartsPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall),
+                    const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall / 2),
                     SizedBox(
-                      height: 200,
+                      height: ConstantDimensions.sizedBoxHeightExtraLarge * 4,
                       child: SingleChildScrollView(
                         clipBehavior: Clip.hardEdge,
                         child: Text(
@@ -197,8 +199,8 @@ class PartsPageCard extends StatelessWidget {
       child: Card(
         color: color,
         child: SizedBox(
-          width: 300,
-          height: 300,
+          width: ConstantDimensions.sizedBoxWidthExtraLarge * 6,
+          height: ConstantDimensions.sizedBoxHeightExtraLarge * 6,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -207,7 +209,7 @@ class PartsPageCard extends StatelessWidget {
                 width: 250,
                 height: 250,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall),
             ],
           ),
         ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learn/utils/constants.dart';
 import 'package:learn/widgets/drawer.dart';
 
+import '../utils/dimensions.dart';
+
 class SolarPage extends StatelessWidget {
   const SolarPage({Key? key}) : super(key: key);
 
@@ -22,7 +24,7 @@ class SolarPage extends StatelessWidget {
             Image.asset(
               'assets/images/solar.gif',
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
             const Text(
               AppConstants.underConstruction,
               style: TextStyle(

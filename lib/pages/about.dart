@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:learn/utils/constants.dart';
+import 'package:learn/utils/dimensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
@@ -27,17 +28,17 @@ class AboutPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium),
             const Text(
               'Version: 1.1.0',
               style: TextStyle(fontSize: 18.0),
             ),
-            const SizedBox(height: 8.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium / 2),
             const Text(
               'Developed by: sapatevaibhav',
               style: TextStyle(fontSize: 18.0),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium),
             const Text(
               'Description:',
               style: TextStyle(
@@ -45,12 +46,12 @@ class AboutPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium / 2),
             const Text(
               AppConstants.description,
               style: TextStyle(fontSize: 18.0),
             ),
-            const SizedBox(height: 6.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightExtraSmall),
             const Text(
               'Source code:',
               style: TextStyle(
@@ -71,7 +72,7 @@ class AboutPage extends StatelessWidget {
                     : Colors.black,
               ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: ConstantDimensions.sizedBoxHeightSmall_Medium),
             const Text(
               'Connect:',
               style: TextStyle(
@@ -94,7 +95,7 @@ class AboutPage extends StatelessWidget {
                         : Colors.black,
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: ConstantDimensions.sizedBoxWidthSmall_Medium),
                 GestureDetector(
                   onTap: () {
                     _launchURL(context, "mailto:sapatevaibhav@duck.com");
@@ -108,7 +109,7 @@ class AboutPage extends StatelessWidget {
                         : Colors.black ,
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: ConstantDimensions.sizedBoxWidthSmall_Medium),
                 GestureDetector(
                   onTap: () {
                     _launchURL(
@@ -120,7 +121,7 @@ class AboutPage extends StatelessWidget {
                     height: 32.0,
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: ConstantDimensions.sizedBoxWidthSmall_Medium),
                 GestureDetector(
                   onTap: () {
                     _launchURL(context, "https://instagram.com/v.d.r.sapate");

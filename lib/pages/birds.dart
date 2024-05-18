@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:learn/utils/constants.dart';
+import 'package:learn/utils/dimensions.dart';
 
 class Bird {
   final String name;
@@ -100,15 +101,15 @@ class _BirdWidgetState extends State<BirdWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 350,
-                    height: 350,
+                    width: ConstantDimensions.sizedBoxExceptions[1],
+                    height: ConstantDimensions.sizedBoxExceptions[1],
                     child: SvgPicture.asset(bird.svgAsset),
                   ),
                 ],
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
           IconButton.outlined(
             highlightColor: Colors.amber,
             onPressed: () {
@@ -126,7 +127,7 @@ class _BirdWidgetState extends State<BirdWidget> {
               fontFamily: 'Comic',
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -134,14 +135,14 @@ class _BirdWidgetState extends State<BirdWidget> {
                 onPressed: _navigateToPreviousBird,
                 icon: const Icon(Icons.arrow_back),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: ConstantDimensions.sizedBoxHeightMedium),
               ElevatedButton(
                 onPressed: () {
                   _playBirdSound(bird.soundAsset);
                 },
                 child: const Text('Play Sound'),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: ConstantDimensions.sizedBoxWidthMedium),
               IconButton(
                 onPressed: _navigateToNextBird,
                 icon: const Icon(Icons.arrow_forward),
